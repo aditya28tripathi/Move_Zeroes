@@ -1,0 +1,19 @@
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int n = nums.size();
+        int zero = 0;
+        
+        // Move all the nonzero elements to the front
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != 0) {
+                nums[zero++] = nums[i];
+            }
+        }
+        
+        // Fill the remaining elements with zeroes
+        for (int i = zero; i < n; i++) {
+            nums[i] = 0;
+        }
+    }
+};
